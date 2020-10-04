@@ -32,60 +32,96 @@
     var container = document.getElementsByClassName('container');
     var saveBtn = $(`<button type='button' class= 'btn btn-primary t-4'>Save Event</button>`);
     var eventfield = $(`<form>
-                        <textarea cols='65'></textarea>
+                        <textarea cols='100' rows = '4' class = 'float-left h-100 border-0'></textarea>
                         </form>`);
     
     
     var timeBlocks = [
       $(`<div class = 'row' id = '8am'> 
-          <div class = 'col-2'  id ='8amCol'>8 am</div>
-          <div class = 'col-8 t-0' id ='8amContent'>Content</div>
-          <div class = 'col-2 save-content'>Save</div>
-        </div>`),
-      $(`<div class = 'row' id = '9am'> 
-          <div class = 'col-2'  id ='9amCol'>9 am</div>
-          <div class = 'col-8' id ='9amContent'>Content</div>
-          <div class = 'col-2 save-content'>Save</div>
-        </div>`),
-      $(`<div class = 'row' id = '10am'> 
-          <div class = 'col-2'  id ='10amCol'>10 am</div>
-          <div class = 'col-8' id ='10amContent'>Content</div>
-          <div class = 'col-2 save-content'>Save</div>
-        </div>`),
-      $(` <div class = 'row' id = '11am'> 
-           <div class = 'col-2'  id ='11amCol'>11 am</div>
-           <div class = 'col-8' id =11amContent'>Content</div>
-            <div class = 'col-2 save-content'>Save</div>
-         </div>`),
-      $(`<div class = 'row' id = '12pm'> 
-          <div class = 'col-2'  id ='12pmCol'>12 pm</div>
-          <div class = 'col-8' id ='12pmContent'>Content</div>
-          <div class = 'col-2 save-content'>Save</div>
-        </div>`),
-      $(`<div class = 'row' id = '1pm'> 
-          <div class = 'col-2'  id ='1pmCol'>1 pm</div>
-          <div class = 'col-8' id ='1pmContent'>Content</div>
-          <div class = 'col-2 save-content'>Save</div>
-        </div>`),
-      $(`<div class = 'row' id = '2pm'> 
-          <div class = 'col-2'  id ='2pmCol'>2 pm</div>
-          <div class = 'col-8' id ='2pmContent'>Content</div>
-          <div class = 'col-2 save-content'>Save</div>
-        </div>`),
-      $(`<div class = 'row' id = '3pm'> 
-          <div class = 'col-2'  id ='3pmCol'>3 pm</div>
-          <div class = 'col-8' id ='3pmContent'>Content</div>
-          <div class = 'col-2 save-content'>Save</div>
-        </div>`),
-      $(`<div class = 'row' id = '4pm'> 
-          <div class = 'col-2'  id ='4pmCol'>4 pm</div>
-          <div class = 'col-8' id ='4pmContent'>Content</div>
-          <div class = 'col-2 save-content'>Save</div>
-        </div>`),
-      $(`<div class = 'row' id = '5pm'> 
-          <div class = 'col-2'  id ='5pmCol'>5 pm</div>
-          <div class = 'col-8' id ='5pmContent'>Content</div>
-          <div class = 'col-2 save-content'>Save</div>
+          <div class = 'col-1 col-fluid border-top'  id ='8amCol'>8 am</div>
+          <div class = 'col-9 col-fluid border border-secondary rounded' id ='8amContent'>Content</div>
+          <div class = 'col-2 col-fluid border-top save-content'>Save</div>
+        </div>
+        <br>
+        <br>`),
+      $(` <br>
+          <br>
+        <div class = 'row' id = '9am'> 
+          <div class = 'col-1 col-fluid border-top'  id ='9amCol'>9 am</div>
+          <div class = 'col-9 col-fluid border border-secondary rounded' id ='9amContent'>Content</div>
+          <div class = 'col-2 col-fluid border-top save-content'>Save</div>
+        </div>
+        <br>
+        <br>`),
+      $(` <br>
+          <br>
+        <div class = 'row' id = '10am'> 
+          <div class = 'col-1 col-fluid border-top'  id ='10amCol'>10 am</div>
+          <div class = 'col-9 col-fluid border border-secondary rounded' id ='10amContent'>Content</div>
+          <div class = 'col-2 col-fluid border-top save-content'>Save</div>
+        </div>
+          <br>
+          <br>`),
+      $(` <br>
+          <br>
+        <div class = 'row' id = '11am'> 
+           <div class = 'col-1 col-fluid border-top'  id ='11amCol'>11 am</div>
+           <div class = 'col-9 col-fluid border border-secondary rounded' id =11amContent'>Content</div>
+          <div class =  'col-2 col-fluid border-top save-content'>Save</div>
+         </div>
+          <br>
+          <br>`),
+      $(` <br>
+          <br>
+        <div class = 'row' id = '12pm'> 
+          <div class = 'col-1 col-fluid border-top'  id ='12pmCol'>12 pm</div>
+          <div class = 'col-9 col-fluid border border-secondary rounded' id ='12pmContent'>Content</div>
+          <div class = 'col-2 col-fluid border-top save-content'>Save</div>
+        </div>
+          <br>
+          <br>`),
+      $(` <br>
+          <br>
+        <div class = 'row' id = '1pm'> 
+          <div class = 'col-1 col-fluid border-top'  id ='1pmCol'>1 pm</div>
+          <div class = 'col-9 col-fluid border border-secondary rounded' id ='1pmContent'>Content</div>
+          <div class = 'col-2 col fluid border-top save-content'>Save</div>
+        </div>
+          <br>
+          <br>`),
+      $(` <br>
+          <br>
+        <div class = 'row' id = '2pm'> 
+          <div class = 'col-1 col-fluid border-top'  id ='2pmCol'>2 pm</div>
+          <div class = 'col-9 col-fluid border border-secondary rounded' id ='2pmContent'>Content</div>
+          <div class = 'col-2 col-fluid border-top save-content'>Save</div>
+        </div>
+          <br>
+          <br>`),
+      $(` <br>
+          <br>
+        <div class = 'row' id = '3pm'> 
+          <div class = 'col-1 col-fluid border-top'  id ='3pmCol'>3 pm</div>
+          <div class = 'col-9 col-fluid border border-secondary rounded' id ='3pmContent'>Content</div>
+          <div class = 'col-2 col-fluid border-top save-content'>Save</div>
+        </div>
+          <br>
+          <br>`),
+      $(` <br>
+          <br>
+        <div class = 'row' id = '4pm'> 
+          <div class = 'col-1 col-fluid border-top'  id ='4pmCol'>4 pm</div>
+          <div class = 'col-9 col-fluid border border-secondary rounded' id ='4pmContent'>Content</div>
+          <div class = 'col-2 col-fluid border-top save-content'>Save</div>
+        </div>
+          <br>
+          <br>`),
+      $(` <br>
+          <br>
+        <div class = 'row' id = '5pm'> 
+          <div class = 'col-1 col-fluid border-top'  id ='5pmCol'>5 pm</div>
+          <div class = 'col-9 col-fluid border border-secondary rounded' id ='5pmContent'>Content</div>
+          <div class = 'col-2 col-fluid border-top save-content'>Save</div>
         </div>`),
      ];
      for (i = 0; i < timeBlocks.length; i++) {function addBlocks(){
@@ -106,8 +142,8 @@
      
      
      addBlocks();
-     $('.col-8').empty();
-     $('.col-8').append(eventfield);
+     $('.col-9').empty();
+     $('.col-9').append(eventfield);
      $('.save-content').empty();
      $('.save-content').append(saveBtn);
     </script>
