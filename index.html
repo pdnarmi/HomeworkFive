@@ -32,14 +32,14 @@
     var container = document.getElementsByClassName('container');
     var saveBtn = $(`<button type='button' class= 'btn btn-primary t-4'>Save Event</button>`);
     var eventfield = $(`<form>
-                        <textarea cols='65' class = 'float-left'></textarea>
+                        <textarea cols='65'></textarea>
                         </form>`);
     
     
     var timeBlocks = [
       $(`<div class = 'row' id = '8am'> 
           <div class = 'col-2'  id ='8amCol'>8 am</div>
-          <div class = 'col-8' id ='8amContent'>Content</div>
+          <div class = 'col-8 t-0' id ='8amContent'>Content</div>
           <div class = 'col-2 save-content'>Save</div>
         </div>`),
       $(`<div class = 'row' id = '9am'> 
