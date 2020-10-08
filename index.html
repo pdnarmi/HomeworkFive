@@ -29,123 +29,81 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script>
-    var container = document.getElementsByClassName('container');
-    var saveBtn = $(`<button type='button' class= 'btn btn-primary t-4'>Save Event</button>`);
-    var eventfield = $(`<form>
-                          <textarea cols='70' rows = '4' class = 'float-left h-100 textField'></textarea>
-                        </form>`);
-    
-    
-    var timeBlocks = [
-      $(`<div class = 'row' id = '8am'> 
-          <div class = 'col-1 col-fluid border-top'  id ='8amCol'>8 am</div>
-          <div class = 'col-9 col-fluid border border-secondary rounded' id ='8amContent'>Content</div>
-          <div class = 'col-2 col-fluid border-top save-content'>Save</div>
-        </div>
-        <br>
-        <br>`),
-      $(` <br>
-          <br>
-        <div class = 'row' id = '9am'> 
-          <div class = 'col-1 col-fluid border-top'  id ='9amCol'>9 am</div>
-          <div class = 'col-9 col-fluid border border-secondary rounded' id ='9amContent'>Content</div>
-          <div class = 'col-2 col-fluid border-top save-content'>Save</div>
-        </div>
-        <br>
-        <br>`),
-      $(` <br>
-          <br>
-        <div class = 'row' id = '10am'> 
-          <div class = 'col-1 col-fluid border-top'  id ='10amCol'>10 am</div>
-          <div class = 'col-9 col-fluid border border-secondary rounded' id ='10amContent'>Content</div>
-          <div class = 'col-2 col-fluid border-top save-content'>Save</div>
-        </div>
-          <br>
-          <br>`),
-      $(` <br>
-          <br>
-        <div class = 'row' id = '11am'> 
-           <div class = 'col-1 col-fluid border-top'  id ='11amCol'>11 am</div>
-           <div class = 'col-9 col-fluid border border-secondary rounded' id =11amContent'>Content</div>
-          <div class =  'col-2 col-fluid border-top save-content'>Save</div>
-         </div>
-          <br>
-          <br>`),
-      $(` <br>
-          <br>
-        <div class = 'row' id = '12pm'> 
-          <div class = 'col-1 col-fluid border-top'  id ='12pmCol'>12 pm</div>
-          <div class = 'col-9 col-fluid border border-secondary rounded' id ='12pmContent'>Content</div>
-          <div class = 'col-2 col-fluid border-top save-content'>Save</div>
-        </div>
-          <br>
-          <br>`),
-      $(` <br>
-          <br>
-        <div class = 'row' id = '1pm'> 
-          <div class = 'col-1 col-fluid border-top'  id ='1pmCol'>1 pm</div>
-          <div class = 'col-9 col-fluid border border-secondary rounded' id ='1pmContent'>Content</div>
-          <div class = 'col-2 col fluid border-top save-content'>Save</div>
-        </div>
-          <br>
-          <br>`),
-      $(` <br>
-          <br>
-        <div class = 'row' id = '2pm'> 
-          <div class = 'col-1 col-fluid border-top'  id ='2pmCol'>2 pm</div>
-          <div class = 'col-9 col-fluid border border-secondary rounded' id ='2pmContent'>Content</div>
-          <div class = 'col-2 col-fluid border-top save-content'>Save</div>
-        </div>
-          <br>
-          <br>`),
-      $(` <br>
-          <br>
-        <div class = 'row' id = '3pm'> 
-          <div class = 'col-1 col-fluid border-top'  id ='3pmCol'>3 pm</div>
-          <div class = 'col-9 col-fluid border border-secondary rounded' id ='3pmContent'>Content</div>
-          <div class = 'col-2 col-fluid border-top save-content'>Save</div>
-        </div>
-          <br>
-          <br>`),
-      $(` <br>
-          <br>
-        <div class = 'row' id = '4pm'> 
-          <div class = 'col-1 col-fluid border-top'  id ='4pmCol'>4 pm</div>
-          <div class = 'col-9 col-fluid border border-secondary rounded' id ='4pmContent'>Content</div>
-          <div class = 'col-2 col-fluid border-top save-content'>Save</div>
-        </div>
-          <br>
-          <br>`),
-      $(` <br>
-          <br>
-        <div class = 'row' id = '5pm'> 
-          <div class = 'col-1 col-fluid border-top'  id ='5pmCol'>5 pm</div>
-          <div class = 'col-9 col-fluid border border-secondary rounded' id ='5pmContent'>Content</div>
-          <div class = 'col-2 col-fluid border-top save-content'>Save</div>
-        </div>`),
-     ];
-     for (i = 0; i < timeBlocks.length; i++) {function addBlocks(){
-      
-      $('.container-fluid').append(timeBlocks);
-     }};
+    $('#currentDay').text(moment().format('dddd')+" "+(moment().format('MMMM'))+" "+(moment().format('Do'))+", "+(moment().format('Y')))
+    var times = ['8:00 am','9:00 am','10:00 am','11:00 am','12:00 pm','1:00 pm','2:00 pm','3:00 pm','4:00 pm','5:00 pm'];
 
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     addBlocks();
-     $('.col-9').empty();
-     $('.col-9').append(eventfield);
-     $('.save-content').empty();
-     $('.save-content').append(saveBtn);
+    for(var i = 0; i<times.length; i++){
+      $('.container-fluid').append(
+        `
+        <div class="container" style="padding-bottom: 15px">
+        <div class = 'row' id ="row`+i+`"> 
+          <div class = 'col-1  border-top'  id ="entry`+i+`">`+times[i]+`</div>
+          <div class = 'col-9  border-top border-left border-right border-secondary rounded ' id ="content`+times[i]+`">To-do:
+                        
+                          <textarea id="text`+i+`"cols='60' rows = '2' class ='float-left border border-dark'></textarea>         
+          </div>
+          <div class = 'col-2 border-top save-content'>
+            <button type='button' class= 'btn btn-primary t-4' onClick='saveEvent("text`+i+`",`+i+`)'>Save Event</button>
+          </div>
+        </div>
+        </div>
+        <br>
+        <br>
+        `
+      );
+    }
+  
+    function saveEvent(textId, i) {
+      console.log($("#"+textId).val());
+      console.log(times[i]);
+      localStorage.setItem(textId, $("#"+textId).val());
+
+      var currentTime = moment();
+      if(moment(times[i], 'h:mma').isBefore(currentTime)){
+        console.log("past");
+        $('.col-1').addClass('past');
+      }
+      if(moment(times[i], 'h:mma').isAfter(currentTime)){
+        console.log("future")
+        $('.col-1').addClass('future');
+        if(moment(times[i], 'h:mma').isSame(currentTime)){
+          console.log("present");
+          $('.col-1').addClass('present');
+        }
+      }
+    }
+
+    function calendarColor(){
+        for(var i = 0; i<times.length; i++){
+          var element = $("#entry"+i);
+
+          var currentTime = moment();
+          if(moment(times[i], 'h:mma').isBefore(currentTime)){
+            console.log("past");
+            element.addClass('past');
+          }
+          if(moment(times[i], 'h:mma').isAfter(currentTime)){
+            console.log("future")
+            element.addClass('future');
+            if(moment(times[i], 'h:mma').isSame(currentTime)){
+              console.log("present");
+              eleme.addClass('present');
+            }
+          }
+          
+        }
+      }
+
+      function populateCalendar(){
+        for(var i = 0; i<times.length; i++){
+          console.log(localStorage.getItem("text"+i));
+        $("#text"+i).text(localStorage.getItem("text"+i));
+        }
+      }
+
+      calendarColor();
+      populateCalendar();
+
     </script>
   </body>
 </html>
